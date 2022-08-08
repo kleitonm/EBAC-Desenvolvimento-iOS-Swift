@@ -1,0 +1,82 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2638
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fnil\fcharset0 HelveticaNeue;\f2\fnil\fcharset0 HelveticaNeue-Bold;
+}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 Exerc\'edcio M\'f3dulo 18\
+\
+1. O que s\'e3o Generics e quais problemas eles resolvem?\
+ - 
+\f1\fs26 Permite que escrevemos fun\'e7\'f5es e tipos flex\'edveis reutiliz\'e1veis, que podem ser utilizados com qualquer tipo, sujeito a requisitos que ser\'e3o definidos, podemos escrever um c\'f3digo que expressa de maneira mais clara e abstrata, \'e9 um dos recursos mais poderosos do Swift. S\'e3o constru\'eddos em cima dos Generics: Array, Dictionary, cole\'e7\'f5es em si. Podem ser utilizados com qualquer tipo, \'e9 importante que os argumentos sejam os mesmos . Tamb\'e9m ajuda a melhor o c\'f3digo, e evitar duplicidade no c\'f3digo.
+\f0\fs24 \
+\
+2. D\'ea um exemplo de uso de generics.\
+\pard\pardeftab560\slleading20\partightenfactor0
+
+\f1\fs26 \cf0 func displayData<T>(data: T) \{\
+  print("Generic Function:")\
+  print("Data Passed:", data)\
+\}\
+\
+displayData(data: "Swift")\
+\
+displayData(data: 5)\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 \
+\
+\
+3. Quais os cuidados que se deve tomar, ao usar pol\'edticas para caches?\
+  - Ajuda o device do usu\'e1rio a n\'e3o ficar fazendo request toda hora na APi, elevando o custo. A politica de cache cache ajuda a reduzir custos. Devemos tomar cuidado quando usar as politicas de caches porque ele pode esta desatualizado, pode ter passado do prazo de uso. \
+\
+\
+4. D\'ea um exemplo de uso de Closure com escaping e sem escaping, observando o uso do weak self.\
+\
+Com escaping:\
+\pard\pardeftab560\slleading20\partightenfactor0
+
+\f2\b\fs26 \cf0 func
+\f1\b0  PixScreen(completion: 
+\f2\b @escaping
+\f1\b0  (Result<[GetApiPix], Error>) -> Void)
+\f0\fs24 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 \
+Sem escaping:\
+\
+\pard\pardeftab560\slleading20\partightenfactor0
+
+\f1\fs26 \cf0 let greetUser = \{ (name: String)  in\
+    print("Hey there, \\(name).")\
+\}\
+greetUser("Delilah")\
+\pard\pardeftab560\slleading20\partightenfactor0
+
+\f0\fs24 \cf0 \
+\pard\pardeftab560\slleading20\partightenfactor0
+
+\f1\fs26 \cf0   
+\f2\b let
+\f1\b0  downloadLogoTask = URLSession.shared.dataTask(with: url) \{ [
+\f2\b weak
+\f1\b0  
+\f2\b self
+\f1\b0 ] data, _, error 
+\f2\b in
+\f1\b0 \
+            
+\f2\b guard
+\f1\b0  
+\f2\b let
+\f1\b0  self = 
+\f2\b self
+\f1\b0  
+\f2\b else
+\f1\b0  \{ 
+\f2\b return
+\f1\b0  \}\
+\
+- Quando coloca o escaping na closure, estamos dizendo que podemos ter um vazamento de mem\'f3ria, porque estamos usando o que deveria est\'e1 dentro da closure, fora do contexto, garantido que o self ser\'e1 fraco. N\'e3o precisa colocar o weak self em todas as closures, somente quando usar o escaping}
