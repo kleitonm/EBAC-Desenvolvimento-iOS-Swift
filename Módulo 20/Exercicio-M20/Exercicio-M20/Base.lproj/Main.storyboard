@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="rg7-Zn-Sld">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="90Q-TI-y1n">
+            <objects>
+                <navigationController id="rg7-Zn-Sld" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ZE6-hK-pbG">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="0xR-4h-pI5"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9V1-9V-S1g" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-816" y="31"/>
+        </scene>
+        <!--Exercicío M20-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Exercicio_M20" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Vfk-FU-Sfp">
+                                <rect key="frame" x="20" y="233" width="374" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kTZ-X7-Hrg">
+                                <rect key="frame" x="20" y="275" width="374" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ikm-j7-TlC">
+                                <rect key="frame" x="20" y="369" width="374" height="47"/>
+                                <color key="backgroundColor" name="AccentColor"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="LOGIN">
+                                            <attributes>
+                                                <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                <font key="NSFont" size="30" name="MarkerFelt-Thin"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="signButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="H4K-nH-UCH"/>
+                                </connections>
+                            </button>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2xg-k8-ISC">
+                                <rect key="frame" x="345" y="88" width="49" height="31"/>
+                                <connections>
+                                    <action selector="switchFlipped:" destination="BYZ-38-t0r" eventType="valueChanged" id="BgG-Ap-ZYC"/>
+                                </connections>
+                            </switch>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Vfk-FU-Sfp" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="1kk-uu-ZM9"/>
+                            <constraint firstItem="2xg-k8-ISC" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="3XV-7x-zmt"/>
+                            <constraint firstItem="Ikm-j7-TlC" firstAttribute="top" secondItem="kTZ-X7-Hrg" secondAttribute="bottom" constant="60" id="6pP-gr-DIT"/>
+                            <constraint firstItem="kTZ-X7-Hrg" firstAttribute="leading" secondItem="Vfk-FU-Sfp" secondAttribute="leading" id="BIh-DT-vRs"/>
+                            <constraint firstItem="Vfk-FU-Sfp" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="145" id="Mtl-sh-f47"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Ikm-j7-TlC" secondAttribute="trailing" constant="20" id="WTH-lD-vGy"/>
+                            <constraint firstItem="Vfk-FU-Sfp" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Ww3-J3-LFx"/>
+                            <constraint firstItem="kTZ-X7-Hrg" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="YG6-h2-503"/>
+                            <constraint firstItem="Ikm-j7-TlC" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="bO0-en-o7s"/>
+                            <constraint firstItem="kTZ-X7-Hrg" firstAttribute="top" secondItem="Vfk-FU-Sfp" secondAttribute="bottom" constant="8" symbolic="YES" id="iZd-Ei-9a7"/>
+                            <constraint firstItem="Ikm-j7-TlC" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="oOT-yE-beY"/>
+                            <constraint firstItem="Vfk-FU-Sfp" firstAttribute="top" secondItem="2xg-k8-ISC" secondAttribute="bottom" constant="114" id="pUA-3z-t9l"/>
+                            <constraint firstItem="kTZ-X7-Hrg" firstAttribute="centerX" secondItem="Vfk-FU-Sfp" secondAttribute="centerX" id="tgA-Ei-zRj"/>
+                            <constraint firstItem="kTZ-X7-Hrg" firstAttribute="trailing" secondItem="Vfk-FU-Sfp" secondAttribute="trailing" id="umi-SR-MLm"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Vfk-FU-Sfp" secondAttribute="trailing" constant="20" id="vW8-nB-syB"/>
+                            <constraint firstItem="2xg-k8-ISC" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="345" id="xi8-h0-Vns"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="2xg-k8-ISC" secondAttribute="trailing" constant="22" id="xvv-Nh-RGm"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Exercicío M20" id="8Mx-UW-MGL"/>
+                    <connections>
+                        <outlet property="nameTextFiel" destination="Vfk-FU-Sfp" id="UtZ-K8-fO5"/>
+                        <outlet property="passwordTextField" destination="kTZ-X7-Hrg" id="h30-oW-iPM"/>
+                        <outlet property="themeSwitch" destination="2xg-k8-ISC" id="fGI-FU-y8l"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="10" y="49"/>
+        </scene>
+    </scenes>
+    <resources>
+        <namedColor name="AccentColor">
+            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
